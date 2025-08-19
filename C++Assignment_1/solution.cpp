@@ -67,6 +67,19 @@ int main()
 	{
 		cout << "1. HP 회복" << endl << "2. MP 회복" << endl << "3. HP 강화" << endl << "4. MP 강화" << endl << "5. 공격 스킬 사용" << endl << "6. 필살기 사용" << endl << "7. 나가기" << endl;
 		cin >> input;
+		
+		if (std::cin.good())
+		{
+			//std::cout << "입력된 정수: " << num << std::end
+			// l;
+			// 유효한 입력이므로 루프 종료
+		}
+		else
+		{
+			std::cout << "잘못된 입력입니다. 다시 시도하세요." << std::endl;
+			std::cin.clear(); // 스트림 상태 초기화
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // 버퍼 비우기
+		}
 
 		//1, 2번 선택시 HP/MP가 20 증가, 포션 개수 1개 차감. 0개일 경우 사용 불가.
 		//3, 4번 선택시 HP/MP가 2배 증가.
@@ -124,6 +137,8 @@ int main()
 				break;
 			case 7:
 				cout << "나가기";
+				break;
+			default:
 				break;
 		}
 		cout << "===========================" << endl << endl;
